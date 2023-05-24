@@ -19,6 +19,7 @@ allprojects {
 
         mavenLocal()
 
+        maven { url 'https://github.com/psiegman/mvn-repo/raw/master/releases' }
         maven { url 'https://jitpack.io' }
         maven { url 'http://acra.googlecode.com/svn/repository/releases' }
         maven { url 'http://repo.springsource.org/libs-release' }
