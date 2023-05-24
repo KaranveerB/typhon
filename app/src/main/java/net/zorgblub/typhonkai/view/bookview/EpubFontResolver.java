@@ -67,7 +67,7 @@ public class EpubFontResolver extends SystemFontResolver {
             return;
         }
 
-        Resource res = textLoader.getCurrentBook().getResources().getByFileName( resourceHRef );
+        Resource res = textLoader.getCurrentBook().getResources().getByHref( resourceHRef );
 
         if ( res == null ) {
             LOG.error("No resource found for href " + resourceHRef );
