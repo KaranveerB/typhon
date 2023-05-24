@@ -1584,6 +1584,13 @@ public class ReadingFragment extends Fragment implements
         startActivityForResult(intent, 5);
     }
 
+    public boolean isDictionaryVisible() {
+        return dictionaryPane.isDisplaying();
+    }
+    public void concealDictionary() {
+        dictionaryPane.conceal();
+    }
+
     private String getLanguageCode() {
         if (this.language == null || this.language.equals("") || this.language.equalsIgnoreCase("und")) {
             return Locale.getDefault().getLanguage();

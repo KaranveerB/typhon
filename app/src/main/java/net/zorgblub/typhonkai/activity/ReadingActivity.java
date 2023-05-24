@@ -58,6 +58,15 @@ public class ReadingActivity extends TyphonActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        if (readingFragment.isDictionaryVisible()) {
+            readingFragment.concealDictionary();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public void onDrawerClosed(View view) {
         getSupportActionBar().setTitle(R.string.app_name);
         super.onDrawerClosed(view);
