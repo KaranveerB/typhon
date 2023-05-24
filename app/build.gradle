@@ -40,12 +40,12 @@ dependencies {
     implementation 'org.slf4j:slf4j-android:1.6.1-RC1'
     implementation 'org.codehaus.jedi:jedi-core:3.0.5'
 
-    implementation('net.nightwhistler.htmlspanner:htmlspanner:0.5-SNAPSHOT') {
+    implementation('com.github.NightWhistler:HtmlSpanner:e667fbafbf') {
         exclude module: 'ant'
         exclude module: 'commons-io'
     }
 
-    implementation('nl.siegmann.epublib:epublib-core:3.1') {
+    implementation("com.positiondev.epublib:epublib-core:3.1") {
         exclude group: 'xmlpull'
         exclude group: 'org.slf4j'
         exclude group: 'net.sf.kxml'
