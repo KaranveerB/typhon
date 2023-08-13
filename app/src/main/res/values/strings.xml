@@ -242,6 +242,8 @@
     <string name="pref_strip_whitespace_summary">Strips out unneeded blank lines.</string>
     <string name="pref_itext_size">Text size</string>
     <string name="pref_itext_size_summary">The size of the font used for displaying books.</string>
+    <string name="pref_dictionary_text_size">Dictionary text size</string>
+    <string name="pref_dictionary_text_size_summary">Text size of the popup dictionary</string>
     <string name="pref_margin_h">Horizontal margins</string>
     <string name="pref_margin_h_summary">Space on the left and right edge of the screen.</string>
     <string name="pref_margin_v">Vertical margins</string>
