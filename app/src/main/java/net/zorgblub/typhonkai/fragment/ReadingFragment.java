@@ -325,6 +325,7 @@ public class ReadingFragment extends Fragment implements
         private int vMargin;
         private int hMargin;
         private int textSize;
+        private int dictionaryTextSize;
         private boolean scrolling;
         private boolean allowStyling;
         private boolean allowColoursFromCSS;
@@ -588,9 +589,11 @@ public class ReadingFragment extends Fragment implements
         savedConfigState.vMargin = config.getVerticalMargin();
 
         savedConfigState.textSize = config.getTextSize();
+        savedConfigState.dictionaryTextSize = config.getDictionaryTextSize();
         savedConfigState.fontName = config.getDefaultFontFamily().getName();
         savedConfigState.serifFontName = config.getSerifFontFamily().getName();
         savedConfigState.sansSerifFontName = config.getSansSerifFontFamily().getName();
+
 
         savedConfigState.scrolling = config.isScrollingEnabled();
         savedConfigState.allowStyling = config.isAllowStyling();
@@ -1261,6 +1264,7 @@ public class ReadingFragment extends Fragment implements
                 || config.getHorizontalMargin() != savedConfigState.hMargin
                 || config.getVerticalMargin() != savedConfigState.vMargin
                 || config.getTextSize() != savedConfigState.textSize
+                || config.getDictionaryTextSize() != savedConfigState.dictionaryTextSize
                 || config.isScrollingEnabled() != savedConfigState.scrolling
                 || config.isAllowStyling() != savedConfigState.allowStyling
                 || config.isUseColoursFromCSS() != savedConfigState.allowColoursFromCSS

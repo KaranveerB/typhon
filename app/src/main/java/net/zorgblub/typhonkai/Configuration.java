@@ -139,6 +139,8 @@ public class Configuration {
     public static final String KEY_DEVICE_NAME = "device_name";
     public static final String KEY_TEXT_SIZE = "itext_size";
 
+    public static final String KEY_DICTIONARY_TEXT_SIZE = "dictionary_text_size";
+
     public static final String KEY_MARGIN_H = "margin_h";
     public static final String KEY_MARGIN_V = "margin_v";
 
@@ -610,6 +612,10 @@ public class Configuration {
 
     public void setTextSize(int textSize) {
         updateValue(KEY_TEXT_SIZE, textSize);
+    }
+
+    public int getDictionaryTextSize() {
+        return settings.getInt(KEY_DICTIONARY_TEXT_SIZE, 40);
     }
 
     public int getHorizontalMargin() {

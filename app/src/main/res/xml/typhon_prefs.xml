@@ -262,6 +262,14 @@
             android:title="@string/pref_itext_size" />
 
         <com.hlidskialf.android.preference.SeekBarPreference
+            android:defaultValue="40"
+            android:dialogTitle="@string/pref_dictionary_text_size"
+            android:key="dictionary_text_size"
+            android:max="100"
+            android:summary="@string/pref_dictionary_text_size_summary"
+            android:title="@string/pref_dictionary_text_size" />
+
+        <com.hlidskialf.android.preference.SeekBarPreference
             android:defaultValue="30"
             android:dialogTitle="@string/pref_margin_h"
             android:key="margin_h"
