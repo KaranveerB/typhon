@@ -23,6 +23,8 @@ import android.text.style.UnderlineSpan;
 import android.util.Pair;
 import android.util.SparseArray;
 
+import net.zorgblub.typhonkai.Configuration;
+
 import org.zorgblub.rikai.glosslist.PinchableListView;
 import org.zorgblub.rikai.glosslist.SizeChangeListener;
 
@@ -44,7 +46,7 @@ public class SpannableHook extends HookAdapter<Spannable> implements SizeChangeL
     private static final int INDENT_SIZE = 30; // TODO Fixed for now but should be proportional to the zoom
     private SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
 
-    private int textSize = PinchableListView.DEFAULT_SIZE;
+    private int textSize;
 
     private boolean halfWidth;
 
@@ -76,7 +78,10 @@ public class SpannableHook extends HookAdapter<Spannable> implements SizeChangeL
     }
 
     public SpannableHook() {
-
+        Configuration config = new Configuration(this.getContext());
+        // this is likely bad, but I'm not sure what this is for. Originally set to
+        // PinchableListView.DEFAULT_SIZE.
+        textSize = config.getDictionaryTextSize();
     }
 
     public SpannableHook(SubBook subBook) {

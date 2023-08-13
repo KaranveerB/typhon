@@ -25,16 +25,16 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.widget.ListView;
 
+import net.zorgblub.typhonkai.Configuration;
+
 public class PinchableListView extends ListView {
 
-	public static final int MAX_SIZE = 80;
+	public static final int MAX_SIZE = 120;
 	public static final int MIN_SIZE = 20;
-	public static final int DEFAULT_SIZE = 40;
-
 	private ScaleGestureDetector mScaleDetector;
 
 	private OnPinchListener mOnPinchListener;
-	private int mTextSize = DEFAULT_SIZE;
+	private int mTextSize;
 
 	private SizeChangeListener mSizeChangeListener;
 
@@ -58,6 +58,8 @@ public class PinchableListView extends ListView {
 
 	private void init() {
 		mScaleDetector = new ScaleGestureDetector(this.getContext(), new ScaleListener());
+		Configuration config = new Configuration(this.getContext());
+		mTextSize = config.getDictionaryTextSize();
 	}
 
 	@Override
