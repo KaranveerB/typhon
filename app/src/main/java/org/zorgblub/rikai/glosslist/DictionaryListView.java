@@ -61,7 +61,6 @@ public class DictionaryListView extends PinchableListView {
         mBackgroundColor = Color.BLACK;
         setDivider(new ColorDrawable(Color.parseColor("#C7C0C0C0")));
         this.setTextColor(Color.WHITE);
-        this.setTextSize(config.getDictionaryTextSize());
         this.setBackgroundColor(Color.parseColor("#C7000000"));
         this.setPadding(0, 0, 0, getPixels(20));
         setDividerHeight(getPixels(3));
