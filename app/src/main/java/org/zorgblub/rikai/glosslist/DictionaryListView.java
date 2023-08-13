@@ -65,6 +65,7 @@ public class DictionaryListView extends PinchableListView {
         this.setBackgroundColor(Color.parseColor("#C7000000"));
         this.setPadding(0, 0, 0, getPixels(20));
         setDividerHeight(getPixels(3));
+        this.setTextSize(100); // your text size here
     }
 
     private int getPixels(int dp) {
