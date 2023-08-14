@@ -1952,9 +1952,6 @@ public class ReadingFragment extends Fragment implements
                         hideTitleBar();
                         updateFromPrefs();
                         return true;
-                    } else if (bookView.hasPrevPosition()) {
-                        bookView.goBackInHistory();
-                        return true;
                     }
                 }
 
