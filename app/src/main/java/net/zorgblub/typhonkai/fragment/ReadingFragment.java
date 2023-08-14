@@ -429,6 +429,9 @@ public class ReadingFragment extends Fragment implements
         this.bookView.setTextSelectionCallback(this);
 
         this.dictionaryPane.setBookReader(this);
+        // ensures dictionary starts concealed, preventing a bug where it is set to visible
+        // despite not actually being visible.
+        this.concealDictionary();
     }
 
 
