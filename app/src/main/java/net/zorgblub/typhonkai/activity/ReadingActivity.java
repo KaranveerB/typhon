@@ -218,10 +218,8 @@ public class ReadingActivity extends TyphonActivity {
         int keyCode = event.getKeyCode();
 
         if (action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_BACK && isDrawerOpen()) {
-            if (isDrawerOpen()) {
-                closeNavigationDrawer();
-                return true;
-            }
+            closeNavigationDrawer();
+            return true;
         }
 
         if (readingFragment.dispatchKeyEvent(event)) {
