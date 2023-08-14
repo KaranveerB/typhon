@@ -1952,6 +1952,9 @@ public class ReadingFragment extends Fragment implements
                         hideTitleBar();
                         updateFromPrefs();
                         return true;
+                    } else if (isDictionaryVisible()) {
+                        concealDictionary();
+                        return true;
                     }
                 }
 

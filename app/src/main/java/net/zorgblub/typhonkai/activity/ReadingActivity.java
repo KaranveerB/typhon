@@ -58,15 +58,6 @@ public class ReadingActivity extends TyphonActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        if (readingFragment.isDictionaryVisible()) {
-            readingFragment.concealDictionary();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
     public void onDrawerClosed(View view) {
         getSupportActionBar().setTitle(R.string.app_name);
         super.onDrawerClosed(view);
@@ -227,8 +218,10 @@ public class ReadingActivity extends TyphonActivity {
         int keyCode = event.getKeyCode();
 
         if (action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_BACK && isDrawerOpen()) {
-            closeNavigationDrawer();
-            return true;
+            if (isDrawerOpen()) {
+                closeNavigationDrawer();
+                return true;
+            }
         }
 
         if (readingFragment.dispatchKeyEvent(event)) {
