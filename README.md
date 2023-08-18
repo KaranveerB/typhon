@@ -13,6 +13,12 @@ Typhon is licensed under the GPL-V3 license.
 
 Benjamin Marlé benjamarle@gmail.com
 
+Additional Fork Additions
+-------------------
+- Makes it so the back button can be used to close the pop-up dictionary
+- Adds configurable default dictionary font size (can also still be increased/decreased with pinch to zoom)
+- Feel free to ask if you want anything else added. Depending on how difficult it is, I may or may not add it, but no harm in asking.
+
 Typhon改
 -------------------
 Revise code base to androidx api29, fixing some UI bugs (Notably fixes unused space at the bottom of tall displays)
