@@ -19,8 +19,7 @@ public class DroidEpwingDictionary<T> extends EpwingDictionary  {
 
     public DroidEpwingDictionary(String path) {
         super(path, null);
-        spannableHook = new SpannableHook();
-        spannableHook.setContext(Typhon.get().getApplicationContext());
+        spannableHook = new SpannableHook(Typhon.get().getApplicationContext());
         setHook(spannableHook);
     }
 

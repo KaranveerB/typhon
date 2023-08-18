@@ -77,8 +77,9 @@ public class SpannableHook extends HookAdapter<Spannable> implements SizeChangeL
         superScriptStart = null;
     }
 
-    public SpannableHook() {
-        Configuration config = new Configuration(this.getContext());
+    public SpannableHook(Context context) {
+        this.context = context;
+        Configuration config = new Configuration(context);
         // this is likely bad, but I'm not sure what this is for. Originally set to
         // PinchableListView.DEFAULT_SIZE.
         textSize = config.getDictionaryTextSize();
@@ -311,10 +312,6 @@ public class SpannableHook extends HookAdapter<Spannable> implements SizeChangeL
 
     public Context getContext() {
         return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 
     @Override
