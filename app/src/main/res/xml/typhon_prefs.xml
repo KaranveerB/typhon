@@ -421,7 +421,7 @@
             android:title="@string/pref_nav_swipe_h" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="scrolling"
             android:key="nav_swipe_v"
             android:summary="@string/pref_nav_swipe_v_summary"
