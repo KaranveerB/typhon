@@ -374,7 +374,6 @@
 
         <ListPreference
             android:defaultValue="slide"
-            android:dependency="rikai"
             android:entries="@array/h_animLabels"
             android:entryValues="@array/h_anim"
             android:key="h_animation"
@@ -384,7 +383,6 @@
 
         <ListPreference
             android:defaultValue="slide"
-            android:dependency="rikai"
             android:entries="@array/v_animLabels"
             android:entryValues="@array/v_anim"
             android:key="v_animation"
@@ -398,7 +396,6 @@
 
         <CheckBoxPreference
             android:defaultValue="true"
-            android:dependency="rikai"
             android:disableDependentsState="true"
             android:key="scrolling"
             android:summary="@string/pref_scrolling_summary"

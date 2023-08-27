@@ -583,7 +583,7 @@ public class Configuration {
     }
 
     public boolean isScrollingEnabled() {
-        return isRikaiEnabled() || settings.getBoolean(KEY_SCROLLING, false);
+        return settings.getBoolean(KEY_SCROLLING, false);
     }
 
     public String getLastReadTitle() {
