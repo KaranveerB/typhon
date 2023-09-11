@@ -1306,14 +1306,13 @@ public class ReadingFragment extends Fragment implements
 
     private void restartActivity() {
 
-        onStop();
-
         //Clear any cached text.
         textLoader.closeCurrentBook();
+        this.libraryService.close();
+
         Intent intent = new Intent(context, ReadingActivity.class);
         intent.setData(Uri.parse(this.fileName));
         startActivity(intent);
-        this.libraryService.close();
 
         Activity activity = getActivity();
 
