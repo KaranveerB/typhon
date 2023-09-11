@@ -1308,7 +1308,6 @@ public class ReadingFragment extends Fragment implements
 
         //Clear any cached text.
         textLoader.closeCurrentBook();
-        this.libraryService.close();
 
         Intent intent = new Intent(context, ReadingActivity.class);
         intent.setData(Uri.parse(this.fileName));
