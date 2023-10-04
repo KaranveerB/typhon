@@ -6,6 +6,8 @@ import net.zorgblub.typhonkai.activity.ManageSitesActivity;
 import net.zorgblub.typhonkai.activity.ReadingActivity;
 import net.zorgblub.typhonkai.activity.TyphonActivity;
 import net.zorgblub.typhonkai.activity.TyphonPrefsActivity;
+import net.zorgblub.typhonkai.epub.TyphonHtmlSpanner;
+import net.zorgblub.typhonkai.epub.furigana.FuriganaSpan;
 import net.zorgblub.typhonkai.fragment.BookDetailsFragment;
 import net.zorgblub.typhonkai.fragment.CatalogFragment;
 import net.zorgblub.typhonkai.fragment.FileBrowseFragment;
@@ -60,6 +62,9 @@ public interface TyphonComponent {
 
     void inject(CatalogFragment catalogFragment);
 
+    void inject(TyphonHtmlSpanner typhonHtmlSpanner);
+
+    void inject(FuriganaSpan furiganaSpan);
 
     // add inject methos for all target
 }

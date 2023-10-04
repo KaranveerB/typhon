@@ -19,6 +19,14 @@
 
 package net.zorgblub.typhonkai;
 
+import static net.zorgblub.typhonkai.CustomOPDSSite.fromJSON;
+import static jedi.functional.Coercions.asList;
+import static jedi.functional.FunctionalPrimitives.firstOption;
+import static jedi.functional.FunctionalPrimitives.isEmpty;
+import static jedi.functional.FunctionalPrimitives.select;
+import static jedi.option.Options.none;
+import static jedi.option.Options.option;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -28,6 +36,7 @@ import android.os.Build;
 import android.os.Debug;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+
 import androidx.core.content.ContextCompat;
 
 import net.nightwhistler.htmlspanner.FontFamily;
@@ -50,14 +59,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import jedi.option.Option;
-
-import static jedi.functional.Coercions.asList;
-import static jedi.functional.FunctionalPrimitives.firstOption;
-import static jedi.functional.FunctionalPrimitives.isEmpty;
-import static jedi.functional.FunctionalPrimitives.select;
-import static jedi.option.Options.none;
-import static jedi.option.Options.option;
-import static net.zorgblub.typhonkai.CustomOPDSSite.fromJSON;
 
 /**
  * Application configuration class which provides a friendly API to the various
@@ -140,6 +141,9 @@ public class Configuration {
     public static final String KEY_TEXT_SIZE = "itext_size";
 
     public static final String KEY_DICTIONARY_TEXT_SIZE = "dictionary_text_size";
+
+    public static final String KEY_FURIGANA_ENABLED = "furigana_enabled";
+    public static final String KEY_FURIGANA_TEXT_SIZE_RATIO = "furigana_text_size_ratio";
 
     public static final String KEY_MARGIN_H = "margin_h";
     public static final String KEY_MARGIN_V = "margin_v";
@@ -578,7 +582,7 @@ public class Configuration {
         return settings.getBoolean(KEY_RIKAI, true);
     }
 
-    public String getAnkiDeckName(){
+    public String getAnkiDeckName() {
         return settings.getString(KEY_ANKI_DECK_NAME, context.getString(R.string.pref_anki_deck_name_default));
     }
 
@@ -616,6 +620,14 @@ public class Configuration {
 
     public int getDictionaryTextSize() {
         return settings.getInt(KEY_DICTIONARY_TEXT_SIZE, 40);
+    }
+
+    public boolean isFuriganaEnabled() {
+        return settings.getBoolean(KEY_FURIGANA_ENABLED, true);
+    }
+
+    public float getFuriganaSizeRatio() {
+        return settings.getInt(KEY_FURIGANA_TEXT_SIZE_RATIO, 30) / 100.0f;
     }
 
     public int getHorizontalMargin() {
@@ -1036,5 +1048,13 @@ public class Configuration {
         long used = Debug.getNativeHeapAllocatedSize();
 
         return (double) used / (double) max;
+    }
+
+    public void registerOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        settings.registerOnSharedPreferenceChangeListener(listener);
+    }
+
+    public void unregisterOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        settings.unregisterOnSharedPreferenceChangeListener(listener);
     }
 }
