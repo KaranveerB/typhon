@@ -24,16 +24,17 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 	private Context mContext;
 
 	private String mDialogMessage, mSuffix;
-	private int mDefault, mMax, mValue = 0;
+	private int mDefault, mMax, mMin, mValue = 0;
 
 	public SeekBarPreference(Context context, AttributeSet attrs) { 
-		super(context,attrs); 
+		super(context,attrs);
 		mContext = context;
 
 		mDialogMessage = attrs.getAttributeValue(androidns,"dialogMessage");
 		mSuffix = attrs.getAttributeValue(androidns,"text");
-		mDefault = attrs.getAttributeIntValue(androidns,"defaultValue", 0);
+		mMin = attrs.getAttributeIntValue(androidns,"min", 0);
 		mMax = attrs.getAttributeIntValue(androidns,"max", 100);
+		mDefault = attrs.getAttributeIntValue(androidns,"defaultValue", mMin);
 
 	}
 	@Override 
@@ -63,6 +64,7 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 		if (shouldPersist())
 			mValue = getPersistedInt(mDefault);
 
+		mSeekBar.setMin(mMin);
 		mSeekBar.setMax(mMax);
 		mSeekBar.setProgress(mValue);
 		return layout;
@@ -70,6 +72,7 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 	@Override 
 	protected void onBindDialogView(View v) {
 		super.onBindDialogView(v);
+		mSeekBar.setMin(mMin);
 		mSeekBar.setMax(mMax);		
 		mSeekBar.setProgress(mValue);
 	}
@@ -94,14 +97,17 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 	public void onStartTrackingTouch(SeekBar seek) {}
 	public void onStopTrackingTouch(SeekBar seek) {}
 
+	public void setMin(int min) { mMin = min; }
+	public int getMin() { return mMin; }
 	public void setMax(int max) { mMax = max; }
 	public int getMax() { return mMax; }
 
 	public void setProgress(int progress) { 
 		mValue = progress;
-		if (mSeekBar != null)
-			mSeekBar.setProgress(progress); 
+		if (mSeekBar != null) {
+			// make sure that
+			mSeekBar.setProgress(Math.max(mMin, progress));
+		}
 	}
 	public int getProgress() { return mValue; }
 }
-

@@ -95,6 +95,7 @@
             android:defaultValue="60"
             android:dialogTitle="@string/pref_scroll_speed"
             android:key="scroll_speed"
+            android:min="1"
             android:max="300"
             android:summary="@string/pref_scroll_speed_summary"
             android:title="@string/pref_scroll_speed" />
@@ -257,6 +258,7 @@
             android:defaultValue="18"
             android:dialogTitle="@string/pref_itext_size"
             android:key="itext_size"
+            android:min="1"
             android:max="48"
             android:summary="@string/pref_itext_size_summary"
             android:title="@string/pref_itext_size" />
@@ -265,6 +267,7 @@
             android:defaultValue="40"
             android:dialogTitle="@string/pref_dictionary_text_size"
             android:key="dictionary_text_size"
+            android:min="1"
             android:max="120"
             android:summary="@string/pref_dictionary_text_size_summary"
             android:title="@string/pref_dictionary_text_size" />
