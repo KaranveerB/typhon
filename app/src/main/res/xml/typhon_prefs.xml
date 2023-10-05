@@ -259,7 +259,7 @@
             android:dialogTitle="@string/pref_itext_size"
             android:key="itext_size"
             android:min="1"
-            android:max="48"
+            android:max="100"
             android:summary="@string/pref_itext_size_summary"
             android:title="@string/pref_itext_size" />
 
