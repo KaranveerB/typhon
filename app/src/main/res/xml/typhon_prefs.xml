@@ -279,7 +279,7 @@
             android:title="@string/pref_furigana_enable" />
 
         <com.hlidskialf.android.preference.SeekBarPreference
-            android:defaultValue="30"
+            android:defaultValue="50"
             android:text=" : 100"
             android:dialogTitle="@string/pref_furigana_text_size_ratio"
             android:key="furigana_text_size_ratio"
