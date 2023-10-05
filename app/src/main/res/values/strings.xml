@@ -244,6 +244,10 @@
     <string name="pref_itext_size_summary">The size of the font used for displaying books.</string>
     <string name="pref_dictionary_text_size">Default dictionary text size</string>
     <string name="pref_dictionary_text_size_summary">Default text size of the popup dictionary. Popup dictionary also supports pinch and zoom.</string>
+    <string name="pref_furigana_enable">Enable furigana</string>
+    <string name="pref_furigana_enable_summary">Displays furigana embedded in the book above the kanji.</string>
+    <string name="pref_furigana_text_size_ratio">Furigana text size ratio</string>
+    <string name="pref_furigana_text_size_ratio_summary">Ratio of furigana\'s text size to regular text size.</string>
     <string name="pref_margin_h">Horizontal margins</string>
     <string name="pref_margin_h_summary">Space on the left and right edge of the screen.</string>
     <string name="pref_margin_v">Vertical margins</string>

@@ -272,6 +272,21 @@
             android:summary="@string/pref_dictionary_text_size_summary"
             android:title="@string/pref_dictionary_text_size" />
 
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="furigana_enabled"
+            android:summary="@string/pref_furigana_enable_summary"
+            android:title="@string/pref_furigana_enable" />
+
+        <com.hlidskialf.android.preference.SeekBarPreference
+            android:defaultValue="30"
+            android:text=" : 100"
+            android:dialogTitle="@string/pref_furigana_text_size_ratio"
+            android:key="furigana_text_size_ratio"
+            android:min="1"
+            android:summary="@string/pref_furigana_text_size_ratio_summary"
+            android:title="@string/pref_furigana_text_size_ratio" />
+
         <com.hlidskialf.android.preference.SeekBarPreference
             android:defaultValue="30"
             android:dialogTitle="@string/pref_margin_h"

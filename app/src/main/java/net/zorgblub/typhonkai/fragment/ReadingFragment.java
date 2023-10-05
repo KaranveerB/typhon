@@ -326,6 +326,9 @@ public class ReadingFragment extends Fragment implements
         private int hMargin;
         private int textSize;
         private int dictionaryTextSize;
+
+        private boolean furiganaEnabled;
+        private float furiganaTextSizeRatio;
         private boolean scrolling;
         private boolean allowStyling;
         private boolean allowColoursFromCSS;
@@ -593,6 +596,8 @@ public class ReadingFragment extends Fragment implements
 
         savedConfigState.textSize = config.getTextSize();
         savedConfigState.dictionaryTextSize = config.getDictionaryTextSize();
+        savedConfigState.furiganaEnabled = config.isFuriganaEnabled();
+        savedConfigState.furiganaTextSizeRatio = config.getFuriganaSizeRatio();
         savedConfigState.fontName = config.getDefaultFontFamily().getName();
         savedConfigState.serifFontName = config.getSerifFontFamily().getName();
         savedConfigState.sansSerifFontName = config.getSansSerifFontFamily().getName();
@@ -1268,6 +1273,8 @@ public class ReadingFragment extends Fragment implements
                 || config.getVerticalMargin() != savedConfigState.vMargin
                 || config.getTextSize() != savedConfigState.textSize
                 || config.getDictionaryTextSize() != savedConfigState.dictionaryTextSize
+                || config.isFuriganaEnabled() != savedConfigState.furiganaEnabled
+                || config.getFuriganaSizeRatio() != savedConfigState.furiganaTextSizeRatio
                 || config.isScrollingEnabled() != savedConfigState.scrolling
                 || config.isAllowStyling() != savedConfigState.allowStyling
                 || config.isUseColoursFromCSS() != savedConfigState.allowColoursFromCSS
