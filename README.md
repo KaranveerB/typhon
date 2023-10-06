@@ -17,7 +17,10 @@ Additional Fork Additions
 -------------------
 - Makes it so the back button can be used to close the pop-up dictionary
 - Adds configurable default dictionary font size (can also still be increased/decreased with pinch to zoom)
+- Furigana support
 - Feel free to ask if you want anything else added. Depending on how difficult it is, I may or may not add it, but no harm in asking.
+
+Note that I'm not necessarily trying to become the modern maintainer of Typhon, so if that's something you want to try to do, feel free to take my changes and do so (and let me know in a discussion post so I can link to your repo as my recommendation depending on how it goes).
 
 Typhon改
 -------------------
